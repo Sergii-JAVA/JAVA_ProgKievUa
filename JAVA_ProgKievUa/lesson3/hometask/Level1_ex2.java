@@ -1,8 +1,8 @@
 /**
- * Есть девятиэтажных дом, в котором 4-ре подъезда. Номер подъезда начинается с
- * единицы. На одном этаже 4-ре квартиры. Наишите программу, которая получит
- * номер квартиры с клавиатуры и вернет номер этажа и номер подъезда. Если такой квартиры нет,
- * нужно сообщить об этом пользователю
+ * Р•СЃС‚СЊ РґРµРІСЏС‚РёСЌС‚Р°Р¶РЅС‹С… РґРѕРј, РІ РєРѕС‚РѕСЂРѕРј 4-СЂРµ РїРѕРґСЉРµР·РґР°. РќРѕРјРµСЂ РїРѕРґСЉРµР·РґР° РЅР°С‡РёРЅР°РµС‚СЃСЏ СЃ
+ * РµРґРёРЅРёС†С‹. РќР° РѕРґРЅРѕРј СЌС‚Р°Р¶Рµ 4-СЂРµ РєРІР°СЂС‚РёСЂС‹. РќР°РёС€РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ, РєРѕС‚РѕСЂР°СЏ РїРѕР»СѓС‡РёС‚
+ * РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹ Рё РІРµСЂРЅРµС‚ РЅРѕРјРµСЂ СЌС‚Р°Р¶Р° Рё РЅРѕРјРµСЂ РїРѕРґСЉРµР·РґР°. Р•СЃР»Рё С‚Р°РєРѕР№ РєРІР°СЂС‚РёСЂС‹ РЅРµС‚,
+ * РЅСѓР¶РЅРѕ СЃРѕРѕР±С‰РёС‚СЊ РѕР± СЌС‚РѕРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
  */
 package com.ua.lesson3.hometask;
 
@@ -11,27 +11,27 @@ import java.util.Scanner;
 public class Level1_ex2 {
 
 	public static void main(String[] args) {
-		int flatNumber;						//	Номер квартиры
+		int flatNumber;						//	РќРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹
 		int amountFlatInEntrance = 144 / 4;
-		int flatAmount = 4 * 9 * 4;		//	Количество квартир в доме
-		int floorAmount = 9;			//	Количество этажей
-		int amountFlatInFloor = 4;		//	Количество квартир на этаже	 
-		int floorNumber;				//	Номер этажа
+		int flatAmount = 4 * 9 * 4;		//	РљРѕР»РёС‡РµСЃС‚РІРѕ РєРІР°СЂС‚РёСЂ РІ РґРѕРјРµ
+		int floorAmount = 9;			//	РљРѕР»РёС‡РµСЃС‚РІРѕ СЌС‚Р°Р¶РµР№
+		int amountFlatInFloor = 4;		//	РљРѕР»РёС‡РµСЃС‚РІРѕ РєРІР°СЂС‚РёСЂ РЅР° СЌС‚Р°Р¶Рµ	 
+		int floorNumber;				//	РќРѕРјРµСЂ СЌС‚Р°Р¶Р°
 
 		Scanner sc = new Scanner(System.in); 
 		
-		System.out.println("Введите номер квартиры:");
+		System.out.println("Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РєРІР°СЂС‚РёСЂС‹:");
 		flatNumber = sc.nextInt();	
 
-		//	Определение номера подъезда
-		if (flatNumber <= flatAmount || flatNumber == 0 || flatNumber > flatAmount) {
+		//	РћРїСЂРµРґРµР»РµРЅРёРµ РЅРѕРјРµСЂР° РїРѕРґСЉРµР·РґР°
+		if (flatNumber <= flatAmount & flatNumber != 0) {
 			int entranceNumber = flatNumber / amountFlatInEntrance;
 				
 			if (flatNumber % amountFlatInEntrance != 0) {
 				entranceNumber++;
 			}
 			
-			//	Определение номера этажа
+			//	РћРїСЂРµРґРµР»РµРЅРёРµ РЅРѕРјРµСЂР° СЌС‚Р°Р¶Р°
 			if (flatNumber % amountFlatInEntrance == 0) {
 				floorNumber = floorAmount;
 			} else {
@@ -40,11 +40,11 @@ public class Level1_ex2 {
 					floorNumber++;
 				}
 			}
-			System.out.println("Квартира № " + flatNumber + " находится в " 
-					+ entranceNumber + " подъезде на " + floorNumber + " этаже.");
+			System.out.println("РљРІР°СЂС‚РёСЂР° в„– " + flatNumber + " РЅР°С…РѕРґРёС‚СЃСЏ РІ " 
+					+ entranceNumber + " РїРѕРґСЉРµР·РґРµ РЅР° " + floorNumber + " СЌС‚Р°Р¶Рµ.");
 			
 		} else {
-			System.out.println("Такого номера квартиры нет в этом доме.");
+			System.out.println("РўР°РєРѕРіРѕ РЅРѕРјРµСЂР° РєРІР°СЂС‚РёСЂС‹ РЅРµС‚ РІ СЌС‚РѕРј РґРѕРјРµ.");
 		}
 	}
 
