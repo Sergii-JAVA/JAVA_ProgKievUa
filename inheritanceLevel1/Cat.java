@@ -7,10 +7,7 @@ public class Cat extends Animal {
 	String name;
 	
 	public Cat(String ration, String color, int weight, String name) {
-		super();
-		Cat.super.setRation(ration);
-		Cat.super.setColor(color);
-		Cat.super.setWeight(weight);
+		super(ration, color, weight);
 		this.name = name;
 	}
 

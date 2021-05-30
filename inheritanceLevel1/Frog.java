@@ -11,10 +11,7 @@ public class Frog extends Animal {
 	String name;
 
 	public Frog(String ration, String color, int weight, String name) {
-		super();
-		Frog.super.setRation(ration);
-		Frog.super.setColor(color);
-		Frog.super.setWeight(weight);
+		super(ration, color, weight);
 		this.name = name;
 	}
 

@@ -35,13 +35,15 @@ public class Veterinarian {
 	}
 	
 	public void treatment(Animal animal) {
-		if(animal instanceof Dog) {
-			System.out.println("I can treat dogs.");
-		} else if(animal instanceof Cat){
-			System.out.println("I can treat cats.");
-		} else {
-			System.out.println("Wrong argument!");
+		System.out.println("Wrong argument!");
+	}
+
+	public void treatment(Cat cat) {
+		System.out.println("I can treat cats.");
 		}
+
+	public void treatment(Dog dog) {
+		System.out.println("I can treat dogs.");
 	}
 
 	@Override
